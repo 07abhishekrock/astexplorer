@@ -24,6 +24,7 @@ import * as gist from './storage/gist';
 import * as parse from './storage/parse';
 import StorageHandler from './storage';
 import '../css/style.css';
+import '../css/remote-editor-input.css';
 import parserMiddleware from './store/parserMiddleware';
 import snippetMiddleware from './store/snippetMiddleware.js';
 import transformerMiddleware from './store/transformerMiddleware';

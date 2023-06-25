@@ -1,0 +1,36 @@
+.remote-form-wrapper{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1em;
+}
+
+.remote-form-wrapper > *{
+  display: block;
+}
+
+.remote-form-wrapper > label{
+  font-size: 1.2em;
+}
+
+.remote-form-wrapper > input{
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+
+.remote-form-wrapper > button{
+  padding: 0.8em;
+  border-radius: 0.2em;
+  outline: 0px;
+  border:1px solid black;
+  background:transparent;
+}
+
+.remote-form-wrapper > button:hover{
+  background:#fafafa;
+  cursor:pointer;
+}

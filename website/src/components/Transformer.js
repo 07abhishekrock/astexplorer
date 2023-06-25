@@ -6,25 +6,28 @@ import * as React from 'react';
 import SplitPane from './SplitPane';
 import TransformOutput from './TransformOutput';
 import PrettierButton from './buttons/PrettierButton';
+import RemoteEditorConnectInput from './RemoteEditorInput';
 
 function resize() {
   publish('PANEL_RESIZE');
 }
 
 export default function Transformer(props) {
+  const [editorValue, setEditorValue] = React.useState('');
   const plainEditor = React.createElement(
     props.transformer.id === 'jscodeshift' ? JSCodeshiftEditor : Editor,
     {
       highlight: false,
-      value: props.transformCode,
+      value: editorValue,
       onContentChange: props.onContentChange,
       enableFormatting: props.enableFormatting,
       keyMap: props.keyMap,
     },
   );
 
-  const formattingEditor = (<div style={{flex: 1, minHeight: 0, minWidth: 0, position: 'relative', display: 'flex'}}>
+  const formattingEditor = (<div style={{flex: 1, minHeight: 0, minWidth: 0, position: 'relative', display: 'flex', flexDirection: 'column'}}>
     <PrettierButton toggleFormatting={props.toggleFormatting} enableFormatting={props.enableFormatting}/>
+    <RemoteEditorConnectInput onCodePush={setEditorValue}/>
     {plainEditor}
   </div>)
 
